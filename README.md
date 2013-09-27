@@ -1,4 +1,4 @@
-osm-tagging-map
+osm-tags-poster
 ===============
 
-Printable map of OSM tagging patterns
+Scalable, printable poster of OSM tagging patterns
