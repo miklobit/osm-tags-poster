@@ -1,0 +1,18 @@
+/* 
+   This file is part of OSM-tags-poster project
+   CC-BY-SA Openstreetmap.org contributors
+   See http://github.com/miklobit/osm-tags-poster for details
+*/
+
+
+
+@font-face
+{
+  font-family: ubuntu;
+  src: url('../fonts/Ubuntu-M.ttf');
+}
+
+.box-title { 
+  font-family: ubuntu, Tahoma, sans-serif; 
+  font-size: 20p 
+}
