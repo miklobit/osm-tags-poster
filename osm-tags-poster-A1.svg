@@ -5,21 +5,25 @@
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+
    version="1.1"
-   width="744.09448"
-   height="1052.3622"
-   id="svg2">
+   width="841mm"
+   height="594mm"
+   id="poster-A1">
 
 
- <defs>
-  <filter height="200%" width="200%" y="0" x="0" id="f1">
-   <feGaussianBlur stdDeviation="10"/>
-  </filter>
- </defs>
- <g>
-  <title>Layer 1</title>
-  <rect x="1" y="-2" id="svg_1" filter="url(#f1)" fill="yellow" stroke-width="3" stroke="green" height="90" width="90"/>
- </g>
+  <defs>
+    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+      values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3"
+  fill="yellow" filter="url(#f1)" />
 </svg>
