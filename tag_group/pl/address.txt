@@ -1,0 +1,8 @@
+addr:housenumber = Numer domu
+addr:housename = Nazwa domu
+addr:street  = Nazwa ulicy
+addr:postcode = Kod pocztowy
+addr:city = Nazwa miasta
+addr:country = Kod kraju  ISO
+addr:interpolation = Numer 
+addr:full = Adres pe³ny/opisowy

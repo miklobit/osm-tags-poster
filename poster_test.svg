@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--  -->
+
+<!DOCTYPE svg [
+   <!ENTITY unit "mm"> 
+   <!ENTITY lang "pl"> 
+
+]>
+
+<?xml-stylesheet href="css/global.css" type="text/css"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+
+   version="1.1"
+   width="841&unit;"  
+   height="594&unit;"
+   viewBox="0 0 841 594"
+   id="poster-A1">
+
+
+  <defs>
+  <!-- drop shadow for box -->
+
+    <filter id="dropShadow" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="3" dy="3" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+      values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+
+
+  <!-- inkscape drop shadow filter -->
+    <filter  id="dropShadow2" style="color-interpolation-filters:sRGB;">
+      <feFlood
+         id="feFlood1330"
+         flood-opacity="0.5"
+         flood-color="rgb(0,0,0)"
+         result="flood" />
+      <feComposite
+         id="feComposite1332"
+         in2="SourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur1334"
+         in="composite1"
+         stdDeviation="3.1"
+         result="blur" />
+      <feOffset
+         id="feOffset1336"
+         dx="5.2"
+         dy="3.90625"
+         result="offset" />
+      <feComposite
+         id="feComposite1338"
+         in2="offset"
+         in="SourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+
+
+  <!-- 2-color box gradients -->
+
+    <linearGradient y1="0" x1="0" y2="1" x2="0" id="gradient_gray_down">
+      <stop offset="0" stop-opacity="1" stop-color="#b2b2b2"/>
+      <stop offset="1" stop-opacity="1" stop-color="#e5e5e5"/>
+    </linearGradient>
+
+
+    <linearGradient y1="1" x1="0" y2="0" x2="0" id="gradient_gray_up">
+      <stop offset="0" stop-opacity="1" stop-color="#b2b2b2"/>
+      <stop offset="1" stop-opacity="1" stop-color="#e5e5e5"/>
+    </linearGradient>
+
+
+  <!-- 2-color background gradient -->
+
+    <linearGradient y1="0" x1="0" y2="1" x2="0" id="gradient_bkg">
+      <stop offset="0" stop-opacity="1" stop-color="#b2f2b2"/>
+      <stop offset="1" stop-opacity="1" stop-color="#b5b5f5"/>
+    </linearGradient>
+
+    <rect id="background"  width="100%" height="100%" 
+          fill="url(#gradient_bkg)" />
+
+
+    <rect id="box"  width="100" height="100" rx="5" ry="5" 
+        	stroke="black" stroke-width="0.5"
+        	filter="url(#dropShadow2)" />
+
+
+    <text id="addr_street" >addr:street=&lt;nazwa ulicy&gt;</text>
+
+  </defs>
+
+  <g>
+    <use xlink:href="#background"/>
+  </g>
+
+  <g id="test-box-1" transform="translate(5 5)">
+     <use xlink:href="#box" fill="url(#gradient_gray_up)"/>
+     <text class="box-title" x="5" y="15">Adresy</text>
+     <text x="10" y="20">
+        <tref xlink:href="#addr_street" />
+     </text>
+  </g>
+
+  <g id="test-box-2" transform="translate(110 5)" >
+     <use xlink:href="#box"  fill="url(#gradient_gray_down)"/>
+     <text x="5" y="20" >&lt; tag=* &gt;</text>
+  </g> 
+
+
+
+</svg>
