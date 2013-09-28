@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--  -->
+
+<?xml-stylesheet href="css/global.css" type="text/css"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="2979.9211"
+   height="2104.7244"
+   id="poster-A1"
+   inkscape:version="0.48+devel r11992"
+   sodipodi:docname="osm-tags-poster-A1-inkscape.svg">
+  <metadata
+     id="metadata25">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="878"
+     id="namedview23"
+     showgrid="false"
+     units="mm"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.9107246"
+     inkscape:cx="41.837985"
+     inkscape:cy="2085.0319"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="poster-A1" />
+  <defs
+     id="defs3">
+    <!-- drop shadow for box -->
+    <filter
+       id="dropShadow"
+       x="0"
+       y="0"
+       width="2"
+       height="2">
+      <feOffset
+         result="offOut"
+         in="SourceGraphic"
+         dx="3mm"
+         dy="3mm"
+         id="feOffset6" />
+      <feColorMatrix
+         result="matrixOut"
+         in="offOut"
+         type="matrix"
+         values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"
+         id="feColorMatrix8" />
+      <feGaussianBlur
+         result="blurOut"
+         in="matrixOut"
+         stdDeviation="10"
+         id="feGaussianBlur10" />
+      <feBlend
+         in="SourceGraphic"
+         in2="blurOut"
+         mode="normal"
+         id="feBlend12" />
+    </filter>
+    <!-- 2-color gray gradient -->
+    <linearGradient
+       y1="-0.9897691"
+       x1="-0.79280013"
+       y2="636.42157"
+       x2="-0.79280013"
+       id="gradient_gray1"
+       gradientTransform="matrix(1.1173394,0,0,0.89498324,7.159798,6.6483801)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-opacity="0.996094"
+         stop-color="#b2b2b2"
+         id="stop15" />
+      <stop
+         offset="1"
+         stop-opacity="0.996094"
+         stop-color="#e5e5e5"
+         id="stop17" />
+    </linearGradient>
+    <filter
+       id="filter1328"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow">
+      <feFlood
+         id="feFlood1330"
+         flood-opacity="0.843137"
+         flood-color="rgb(0,0,0)"
+         result="flood" />
+      <feComposite
+         id="feComposite1332"
+         in2="SourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur1334"
+         in="composite1"
+         stdDeviation="3.1"
+         result="blur" />
+      <feOffset
+         id="feOffset1336"
+         dx="5.2"
+         dy="3.90625"
+         result="offset" />
+      <feComposite
+         id="feComposite1338"
+         in2="offset"
+         in="SourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+  </defs>
+  <rect
+     width="354.33072"
+     height="283.46457"
+     rx="17.716536"
+     ry="17.716536"
+     id="rect19"
+     x="7.1597977"
+     y="6.6486292"
+     style="fill:url(#gradient_gray1);stroke:#000000;stroke-width:0.5mm;filter:url(#filter1328)" />
+  <text
+     x="32.502224"
+     y="44.137257"
+     id="text21"
+     style="fill:#ff0000;-inkscape-font-specification:Ubuntu;font-family:Ubuntu;font-size:12.5px">&lt; tag=value &gt;</text>
+  <text
+     style="fill:#ff0000;-inkscape-font-specification:Ubuntu;font-family:Ubuntu;font-size:12.5px"
+     id="text830"
+     y="44.137257"
+     x="32.502224">&lt; tag=value &gt;</text>
+  <text
+     x="31.99081"
+     y="57.945438"
+     id="text832"
+     style="fill:#ff0000;-inkscape-font-specification:Ubuntu;font-family:Ubuntu;font-size:12.5px">&lt; tag=value &gt;</text>
+  <text
+     style="fill:#ff0000;-inkscape-font-specification:Ubuntu;font-family:Ubuntu;font-size:12.5px"
+     id="text834"
+     y="71.753624"
+     x="31.99081">&lt; tag=value &gt;</text>
+</svg>
