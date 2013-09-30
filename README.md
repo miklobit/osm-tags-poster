@@ -1,7 +1,7 @@
 osm-tags-poster
 ===============
 
-Scalable, printable poster of OSM tagging patterns
+Scalable, printable poster with OSM tagging patterns
 
 Get output files from:
 
