@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'UbuntuMedium';
+    src: url('ubuntu-m.eot');
+    src: url('ubuntu-m.eot') format('embedded-opentype'),
+         url('ubuntu-m.woff') format('woff'),
+         url('ubuntu-m.ttf') format('truetype'),
+         url('ubuntu-m.svg#UbuntuMedium') format('svg');
+}

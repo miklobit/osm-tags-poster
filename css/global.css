@@ -1,26 +1,29 @@
-﻿/* 
+/* 
    This file is part of OSM-tags-poster project
    CC-BY-SA Openstreetmap.org contributors
    See http://github.com/miklobit/osm-tags-poster for details
 */
 
 
-
-@font-face
-{
-  font-family: ubuntu;
-  src: local("☺"), url('../fonts/Ubuntu-M.ttf');
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('UbuntuMedium');
+    src: url('../fonts/ubuntu-web/ubuntu-m.eot');
+    src: url('../fonts/ubuntu-web/ubuntu-m.eot') format('embedded-opentype'),
+         url('../fonts/ubuntu-web/ubuntu-m.woff') format('woff'),
+         url('../fonts/ubuntu-web/ubuntu-m.ttf') format('truetype'),
+         url('../fonts/ubuntu-web/ubuntu-m.svg#UbuntuMedium') format('svg');
 }
 
 .box-title { 
-  font-family: ubuntu, Tahoma, sans-serif; 
+  font-family: Ubuntu, Tahoma, sans-serif; 
   font-size: 7pt ; 
   font-weight: bold ;
   fill: white;
 }
 
 text { 
-  font-family: ubuntu, Tahoma, sans-serif; 
+  font-family: Ubuntu, Tahoma, sans-serif; 
   fill: red;
   font-size: 5pt ; 
 }
