@@ -42,7 +42,7 @@
 	   <xsl:attribute name="style">
           width: <xsl:value-of select="$col_width"/>px; height: 100%;
 	   </xsl:attribute>
-	   <xsl:for-each select="presets:presets/group">
+	   <xsl:for-each select="presets:presets/presets:group">
               <xsl:value-of select="@name"/>
               <br/>
            </xsl:for-each>
