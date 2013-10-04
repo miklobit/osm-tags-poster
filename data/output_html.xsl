@@ -26,19 +26,21 @@
 	<title>OSM Tagging schema</title>       
 	<style type="text/css">
 	 body { font-family: verdana,tahoma ; font-size: 10px ; }
+	 h2 { font-size: 12px; }
 	 table  { border-collapse:collapse; }
 	 #list * { font-family: verdana,tahoma ; font-size: 10px ; }
 	 #list table, td, th 
 	  { border-top: 1px solid black; text-align: left ;
 		vertical-align: top; } 
-	 td.finder  { padding-left: 5px; font-weight: bold; background-color: #F8F8F8 ;}  
+         .group { padding-left: 10px; font-weight: bold; background-color: #F8F8F8 ;}  	
+	 .item  { padding-left: 20px; font-weight: normal; background-color: #F8F8F8 ;}  
 	 td.icon    { padding-left: 10px; padding-right: 10px; background-color: #F8F8F8 ; }
 	 td.fdate   { padding-right: 5px; font-weight: bold; background-color: #F8F8F8 ;}
 	 td.text    { border: 0px; }
 	</style>
 	</head>
 	<body>
-	<h>OSM tagging schema (build 0004)</h>
+	<h>OSM tagging schema (build 0005)</h>
 	<div id="list">
 	   <xsl:attribute name="style">
           width: <xsl:value-of select="$col_width"/>px; height: 100%;
@@ -54,14 +56,15 @@
 </xsl:template>
 
 
-<xsl:template match="group">
+<xsl:template match="presets:group">
      <xsl:value-of select="@name"/>
+     <br/>
      <xsl:for-each select="presets:item">
        <p>
-       	 <xsl:attribute name="style">
-          width: <xsl:value-of select="$col_width"/>px; height: 100%;
-	   </xsl:attribute>
-	 <xsl:value-of select="@name"/>
+       	 <xsl:attribute name="class">
+            item
+	 </xsl:attribute>
+
        </p>
      </xsl:for-each>
 </xsl:template>
