@@ -23,7 +23,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<title>OSM Tagging schema (build 0001)</title>       
+	<title>OSM Tagging schema</title>       
 	<style type="text/css">
 	 table  { border-collapse:collapse; }
 	 #list * { font-family: verdana,tahoma ; font-size: 10px ; }
@@ -37,7 +37,7 @@
 	</style>
 	</head>
 	<body>
-	<h>-OSM tagging schema-</h>
+	<h>-OSM tagging schema- (build 0002)</h>
 	<div id="list">
 	   <xsl:attribute name="style">
           width: <xsl:value-of select="$col_width"/>px; height: 100%;
