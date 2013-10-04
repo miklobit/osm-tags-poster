@@ -40,7 +40,7 @@
 	</style>
 	</head>
 	<body>
-	<h>OSM tagging schema (build 0005)</h>
+	<h>OSM tagging schema (build 0006)</h>
 	<div id="list">
 	   <xsl:attribute name="style">
                width: <xsl:value-of select="$col_width"/>px; height: 100%;
@@ -65,7 +65,7 @@
        	 <xsl:attribute name="class">
             item
 	 </xsl:attribute>
-
+         <xsl:value-of select="@name"/>
        </p>
      </xsl:for-each>
 </xsl:template>
