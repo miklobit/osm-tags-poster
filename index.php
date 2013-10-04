@@ -1,5 +1,7 @@
 ﻿<?php
 
+$build = '0001';
+
 $display_form = 0;
 if( isset($_POST['output'] ) )
 {
@@ -19,13 +21,13 @@ if( $display_form  != 0 ) {
 // display form
 echo '<html>
 	<head>
-	<title>OSM tagging schema (build 0001)</title> 
+	<title>OSM tagging schema (build '.$build.')</title> 
 	<style type="text/css">
 	 body { font-family: verdana,tahoma ; font-size: 10px ; }
 	 form { font-size: 12px; }
 	</style>
 	<body id="top">
-	<h2>OSM tagging schema</h2><br/>
+	<h2>OSM tagging schema (build '.$build.')</h2><br/>
 	<form name="input" action="" method="post" enctype="multipart/form-data">
 	
 	  <input type="radio" name="output" value="html" checked="checked" /> 
