@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:presets="http://josm.openstreetmap.de/tagging-preset-1.0">
+    xmlns:presets="http://josm.openstreetmap.de/tagging-preset-1.0">
 <xsl:output method = "xml" version="1.0"
     cdata-section-elements=""
     doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
@@ -42,7 +42,7 @@
 	   <xsl:attribute name="style">
           width: <xsl:value-of select="$col_width"/>px; height: 100%;
 	   </xsl:attribute>
-	   <xsl:for-each select="presets/group">
+	   <xsl:for-each select="presets:presets/group">
               <xsl:value-of select="@name"/>
               <br/>
            </xsl:for-each>
