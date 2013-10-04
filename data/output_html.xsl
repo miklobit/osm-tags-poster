@@ -43,11 +43,12 @@
 	<h>OSM tagging schema (build 0005)</h>
 	<div id="list">
 	   <xsl:attribute name="style">
-          width: <xsl:value-of select="$col_width"/>px; height: 100%;
+               width: <xsl:value-of select="$col_width"/>px; height: 100%;
 	   </xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
               <xsl:value-of select="@name"/>
               <br/>
+              <xsl:apply-templates/>  
            </xsl:for-each>
 	</div>
 	<div id="message"></div>
