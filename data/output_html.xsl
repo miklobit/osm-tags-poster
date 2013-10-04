@@ -23,7 +23,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<title>OSM Tagging schema</title>       
+	<title>OSM Tagging schema (build 0001)</title>       
 	<style type="text/css">
 	 table  { border-collapse:collapse; }
 	 #list * { font-family: verdana,tahoma ; font-size: 10px ; }
@@ -41,8 +41,11 @@
 	<div id="list">
 	   <xsl:attribute name="style">
           width: <xsl:value-of select="$col_width"/>px; height: 100%;
-	   </xsl:attribute>	
-	   <xsl:apply-templates select="group"/>
+	   </xsl:attribute>
+	   <xsl:for-each select="presets/group">
+              <xsl:value-of select="@name"/>
+              <br/>
+           </xsl:for-each>
 	</div>
 	<div id="message"></div>
 	</body>
