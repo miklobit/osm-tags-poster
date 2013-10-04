@@ -25,6 +25,7 @@
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<title>OSM Tagging schema</title>       
 	<style type="text/css">
+	 body { font-family: verdana,tahoma ; font-size: 10px ; }
 	 table  { border-collapse:collapse; }
 	 #list * { font-family: verdana,tahoma ; font-size: 10px ; }
 	 #list table, td, th 
@@ -37,7 +38,7 @@
 	</style>
 	</head>
 	<body>
-	<h>-OSM tagging schema- (build 0003)</h>
+	<h>OSM tagging schema (build 0004)</h>
 	<div id="list">
 	   <xsl:attribute name="style">
           width: <xsl:value-of select="$col_width"/>px; height: 100%;
@@ -55,9 +56,13 @@
 
 <xsl:template match="group">
      <xsl:value-of select="@name"/>
-     <xsl:for-each select="item">
-		 <xsl:value-of select="@name"/>
-		 <br/>
+     <xsl:for-each select="presets:item">
+       <p>
+       	 <xsl:attribute name="style">
+          width: <xsl:value-of select="$col_width"/>px; height: 100%;
+	   </xsl:attribute>
+	 <xsl:value-of select="@name"/>
+       </p>
      </xsl:for-each>
 </xsl:template>
 
