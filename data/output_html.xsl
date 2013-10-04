@@ -32,16 +32,16 @@
 	 #list table, td, th 
 	  { border-top: 1px solid black; text-align: left ;
 		vertical-align: top; } 
-	 .group0 { padding-left: 10px; font-weight: bold; background-color: #A8F8A8 ;} 	
-         .group1 { padding-left: 20px; font-weight: bold; background-color: #C8F8C8 ;}  	
-	 .item  { padding-left: 30px; font-weight: normal; background-color: #F8F8F8 ;}  
+	 .group0 { padding-left: 10px; font-weight: bold; background-color: #F8A8A8 ;} 	
+         .group1 { padding-left: 20px; font-weight: bold; background-color: #F8F8A8 ;}  	
+	 .item  { padding-left: 30px; font-weight: normal; background-color: #A8F8A8 ;}  
 	 td.icon    { padding-left: 10px; padding-right: 10px; background-color: #F8F8F8 ; }
 	 td.fdate   { padding-right: 5px; font-weight: bold; background-color: #F8F8F8 ;}
 	 td.text    { border: 0px; }
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema (build 0008)</h2><br/><br/>
+	<h2>OSM tagging schema (build 0009)</h2><br/><br/>
 	<div id="list">
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
