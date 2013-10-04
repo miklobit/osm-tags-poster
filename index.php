@@ -19,7 +19,7 @@ if( $display_form  != 0 ) {
 // display form
 echo '<html>
 	<head>
-	<title>OSM tagging schema</title> 
+	<title>OSM tagging schema (build 0001)</title> 
 	<style type="text/css">
 	 body { font-family: verdana,tahoma ; font-size: 10px ; }
 	 form { font-size: 12px; }
