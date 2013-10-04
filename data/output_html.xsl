@@ -66,11 +66,13 @@
      </p>
      <xsl:for-each select="presets:item">
        <p>
-       	 <xsl:attribute name="class">item</xsl:attribute>
+       	 <xsl:attribute name="class">item</xsl:attribute>test
+       	 <!--
        	 <a>
        	   <xsl:attribute name="href"><xsl:value-of select="presets:link@href"/></xsl:attribute>
            <xsl:value-of select="@name"/>
          </a>
+         -->
        </p>
      </xsl:for-each>
 </xsl:template>
