@@ -35,13 +35,14 @@
 	 .group0 { padding-left: 10px; font-weight: bold; background-color: #F8A8A8 ;} 	
          .group1 { padding-left: 20px; font-weight: bold; background-color: #F8F8A8 ;}  	
 	 .item  { padding-left: 30px; font-weight: normal; background-color: #A8F8A8 ;}  
+	 .item a { link-decoration: none; }
 	 td.icon    { padding-left: 10px; padding-right: 10px; background-color: #F8F8F8 ; }
 	 td.fdate   { padding-right: 5px; font-weight: bold; background-color: #F8F8F8 ;}
 	 td.text    { border: 0px; }
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema (build 0009)</h2><br/><br/>
+	<h2>OSM tagging schema (build 0010)</h2><br/><br/>
 	<div id="list">
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
@@ -66,7 +67,10 @@
      <xsl:for-each select="presets:item">
        <p>
        	 <xsl:attribute name="class">item</xsl:attribute>
-         <xsl:value-of select="@name"/>
+       	 <a>
+       	   <xsl:attribute name="href"><xsl:value-of select="presets:link@href"/></xsl:attribute>
+           <xsl:value-of select="@name"/>
+         </a>
        </p>
      </xsl:for-each>
 </xsl:template>
