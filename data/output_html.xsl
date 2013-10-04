@@ -32,20 +32,23 @@
 	 #list table, td, th 
 	  { border-top: 1px solid black; text-align: left ;
 		vertical-align: top; } 
-         .group { padding-left: 10px; font-weight: bold; background-color: #F8F8F8 ;}  	
-	 .item  { padding-left: 20px; font-weight: normal; background-color: #F8F8F8 ;}  
+	 .group0 { padding-left: 10px; font-weight: bold; background-color: #A8F8A8 ;} 	
+         .group1 { padding-left: 20px; font-weight: bold; background-color: #C8F8C8 ;}  	
+	 .item  { padding-left: 30px; font-weight: normal; background-color: #F8F8F8 ;}  
 	 td.icon    { padding-left: 10px; padding-right: 10px; background-color: #F8F8F8 ; }
 	 td.fdate   { padding-right: 5px; font-weight: bold; background-color: #F8F8F8 ;}
 	 td.text    { border: 0px; }
 	</style>
 	</head>
 	<body>
-	<h>OSM tagging schema (build 0007)</h>
+	<h2>OSM tagging schema (build 0008)</h2><br/><br/>
 	<div id="list">
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
+	    <p>
+	      <xsl:attribute name="class">group0</xsl:attribute>
               <xsl:value-of select="@name"/>
-              <br/>
+            </p>
               <xsl:apply-templates/>  
            </xsl:for-each>
 	</div>
@@ -56,8 +59,10 @@
 
 
 <xsl:template match="presets:group">
-     <xsl:value-of select="@name"/>
-     <br/>
+     <p>
+       <xsl:attribute name="class">group1</xsl:attribute>
+       <xsl:value-of select="@name"/>
+     </p>
      <xsl:for-each select="presets:item">
        <p>
        	 <xsl:attribute name="class">item</xsl:attribute>
