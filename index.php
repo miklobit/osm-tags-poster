@@ -5,10 +5,10 @@ if( isset($_POST['output'] ) )
 {
  if( $_POST['output'] == "html" ) {	
 
-	$xsl = './data/output_html.xsl';
+	$xsl_path = './data/output_html.xsl';
 	
 	// generate xsl transformation	
-	genOutput($xsl);
+	genOutput($xsl_path);
 	
  } 
    else {  $display_form = 1; }
@@ -47,7 +47,7 @@ echo '<html>
     
 }
 
-function genOutput($xsl)
+function genOutput($xsl_path)
 {
 
 //	$include_txt = isset($_POST['include_txt']) ? "1" : "0" ;
@@ -60,7 +60,7 @@ function genOutput($xsl)
 	$xml->load('./data/defaultpresets.xml');
 
 	$xsl = new DOMDocument;
-	$xsl->load($xsl);
+	$xsl->load($xsl_path);
 		
 	// Configure the transformer
 	$proc = new XSLTProcessor;
