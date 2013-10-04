@@ -42,7 +42,7 @@
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema (build 0012)</h2><br/><br/>
+	<h2>OSM tagging schema (build 0013)</h2><br/><br/>
 	<div id="list">
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
@@ -67,10 +67,10 @@
      <xsl:for-each select="presets:item">
        <p>
        	 <xsl:attribute name="class">item</xsl:attribute>
-       	 <a href="#">
-       	   <!--
-       	   <xsl:attribute name="href"><xsl:value-of select="presets:link@href"/></xsl:attribute>
-       	   -->
+       	  <a >
+       	   
+       	   <xsl:attribute name="href"><xsl:value-of select="presets:link/@href"/></xsl:attribute>
+       	  
            <xsl:value-of select="@name"/>
          </a>
        </p>
