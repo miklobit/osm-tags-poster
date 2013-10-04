@@ -35,7 +35,7 @@
 	 .group0 { padding-left: 10px; font-weight: bold; background-color: #F8A8A8 ;} 	
          .group1 { padding-left: 20px; font-weight: bold; background-color: #F8F8A8 ;}  	
 	 .item  { padding-left: 30px; font-weight: normal; background-color: #A8F8A8 ;}  
-	 .item a { link-decoration: none; }
+	 .item a {text-decoration:none;}
 	 td.icon    { padding-left: 10px; padding-right: 10px; background-color: #F8F8F8 ; }
 	 td.fdate   { padding-right: 5px; font-weight: bold; background-color: #F8F8F8 ;}
 	 td.text    { border: 0px; }
