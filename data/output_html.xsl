@@ -8,16 +8,20 @@
     doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
     doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
-<xsl:variable name="v1">default language ISO</xsl:variable>
+<!-- this file is part of osm-tag-poster project: github.com/miklobit/osm-tags-poster  -->
+<!-- created by miklobit 2013.10.01 -->
 
-<xsl:param name="build" select="0014"/>
+<xsl:variable name="v1"></xsl:variable>
+
+<xsl:param name="build" select="0019"/>
 <xsl:param name="col_width" select="400"/>
+<xsl:param name="lang" select="pl"/>
 
 <xsl:template match="/">
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<title>OSM Tagging schema (build <xsl:value-of select="$build"/>)</title>       
+	<title>OSM Tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</title>       
 	<style type="text/css">
 	 body { font-family: verdana,tahoma ; font-size: 10px ; }
 	 h2 { font-size: 12px; }
@@ -36,12 +40,12 @@
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema (build <xsl:value-of select="$build"/>)</h2><br/><br/>
+	<h2>OSM tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</h2><br/><br/>
 	<div id="list">
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
 	    <p>
-	      <xsl:attribute name="class">group0</xsl:attribute>
+	      <xsl:attribute name="class">group0</xsl:attribute>      
               <xsl:value-of select="@name"/>
             </p>
               <xsl:apply-templates/>  
@@ -61,10 +65,19 @@
      <xsl:for-each select="presets:item">
        <p>
        	 <xsl:attribute name="class">item</xsl:attribute>
-       	  <a >
-       	   
-       	   <xsl:attribute name="href"><xsl:value-of select="presets:link/@href"/></xsl:attribute>
-       	  
+       	  <a >  <!--  wikipedia link -->     	   
+       	   <!--  first try language translation, then default  --> 
+		   <xsl:variable name="wiki_href" select="concat($lang,'.href')" />	       	   
+       	   <xsl:attribute name="href">
+		        <xsl:choose>
+		          <xsl:when test="presets:link/@*[local-name()=$wiki_href]">
+					<xsl:value-of select="presets:link/@*[local-name()=$wiki_href]"/>
+		          </xsl:when>
+		          <xsl:otherwise>
+		          	<xsl:value-of select="presets:link/@href"/>  <!-- default link -->
+		          </xsl:otherwise>
+		        </xsl:choose>       	      
+       	   </xsl:attribute>       	  
            <xsl:value-of select="@name"/>
          </a>
        </p>

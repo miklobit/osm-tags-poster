@@ -1,6 +1,6 @@
 ﻿<?php
 
-$build = '00014';
+$build = '00015';
 
 $display_form = 0;
 if( isset($_POST['output'] ) )
@@ -38,7 +38,12 @@ echo '<html>
 	  <hr width="30%" align="left" /> <br />   
       
 	  <!-- <input type="checkbox" name="include_txt" value="1" checked="checked" />Pokaż tekst wpisu<br /> -->
-	  Column width<input type="text" name="col_width" value="600" />px<br />
+	  Column width&nbsp;<input type="text" name="col_width" value="600" />px<br />
+	  <!-- language translation -->
+	  Language&nbsp;<select name="lang">
+                <option value="pl">PL</option>
+                <option value="en">EN</option>
+             </select>
 	  
 	  <hr width="30%" align="left" />  	  
 	   <input type="submit" name="submit" value="Generate " />
@@ -70,9 +75,12 @@ function genOutput($xsl_path)
 	// set parameters
 
 //	$proc->setParameter( '', 'include_txt',  $include_txt);	
-	if( isset($_POST['log_width']) ) {
-		$proc->setParameter( '', 'log_width',  $_POST['log_width'] );
-	}		
+	if( isset($_POST['col_width']) ) {
+		$proc->setParameter( '', 'col_width',  $_POST['col_width'] );
+	}
+	if( isset($_POST['lang']) ) {
+		$proc->setParameter( '', 'lang',  $_POST['lang'] );
+	}				
 		
 	$proc->importStyleSheet($xsl); // attach the xsl rules
 	echo $proc->transformToXML($xml);
