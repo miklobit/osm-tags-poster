@@ -23,67 +23,114 @@
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<title>OSM Tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</title>       
 	<style type="text/css">
-	 body { font-family: verdana,tahoma ; font-size: 10px ; }
-	 h2 { font-size: 12px; }
-	 table  { border-collapse:collapse; }
-	 #list * { font-family: verdana,tahoma ; font-size: 10px ; }
-	 #list table, td, th 
-	  { border-top: 1px solid black; text-align: left ;
-		vertical-align: top; } 
-	 .group0 { padding-left: 10px; font-weight: bold; background-color: #F8A8A8 ;} 	
-         .group1 { padding-left: 20px; font-weight: bold; background-color: #F8F8A8 ;}  	
-	 .item  { padding-left: 30px; font-weight: normal; background-color: #A8F8A8 ;}  
+	 body { font-family: verdana,tahoma ; font-size: 12px ; }
+	 h2 { font-size: 14px; }
+	 #list {
+		position: relative;
+		float: left ;
+		width: <xsl:value-of select="$col_width"/>px;
+		border: 1px solid #405F72;
+		padding: 5px 5px 5px 5px ;	
+		display: table; 
+	 }
+ 
+	 .line {
+		position: relative;
+		float: left ;
+		width: 100%;	
+		display: table-cell; 
+		vertical-align: middle;		 
+	  }			
+	 .icon { 
+	    padding-left: 10px;
+		float: left ;
+		clear: both ;
+		width: 10%;
+		display: table-cell; 
+		vertical-align: middle;				 
+	  }	
+	 .content {
+	    padding-left: 10px;
+	    padding-top: 7px;
+	    padding-bottom: 7px;
+		float: left ;
+		width: 85%;
+		display: table-cell; 
+		vertical-align: middle;			
+	  }
+	 .group0 { font-weight: bold; background-color: #FFE0E0 ;} 	
+     .group1 { font-weight: bold; background-color: #FFFFE0 ;}  	
+	 .item  {  font-weight: normal; background-color: #E0FFE0 ;}  
 	 .item a {text-decoration:none;}
-	 td.icon    { padding-left: 10px; padding-right: 10px; background-color: #F8F8F8 ; }
-	 td.fdate   { padding-right: 5px; font-weight: bold; background-color: #F8F8F8 ;}
-	 td.text    { border: 0px; }
+
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</h2><br/><br/>
+	<h2>OSM tagging schema <xsl:value-of select="$lang"/> (test build <xsl:value-of select="$build"/>)</h2><br/><br/>
 	<div id="list">
+	  <!--
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
+	  --> 
 	   <xsl:for-each select="presets:presets/presets:group">
-	    <p>
-	      <xsl:attribute name="class">group0</xsl:attribute>      
-              <xsl:value-of select="@name"/>
-            </p>
-              <xsl:apply-templates/>  
-           </xsl:for-each>
+	      <div class="line group0">
+		     <div class="icon">
+		        <xsl:call-template name="icon"/>
+		     </div>   
+		     <div class="content">
+		        <xsl:call-template name="name"/> 
+		     </div>
+		  </div>  
+          <xsl:apply-templates/>  
+       </xsl:for-each>
 	</div>
-	<div id="message"></div>
 	</body>
 	</html>
 </xsl:template>
 
 
 <xsl:template match="presets:group">
-     <p>
-       <xsl:attribute name="class">group1</xsl:attribute>
-       <xsl:value-of select="@name"/>
-     </p>
+     <div class="line group1">
+	     <div class="icon">
+	        <xsl:call-template name="icon"/>
+	     </div>    
+	     <div class="content">
+	        <xsl:call-template name="name"/> 
+	     </div>
+     </div>
      <xsl:for-each select="presets:item">
-       <p>
-       	 <xsl:attribute name="class">item</xsl:attribute>
-       	  <a >  <!--  wikipedia link -->     	   
-       	   <!--  first try language translation, then default  --> 
-		   <xsl:variable name="wiki_href" select="concat($lang,'.href')" />	       	   
-       	   <xsl:attribute name="href">
-		        <xsl:choose>
-		          <xsl:when test="presets:link/@*[local-name()=$wiki_href]">
-					<xsl:value-of select="presets:link/@*[local-name()=$wiki_href]"/>
-		          </xsl:when>
-		          <xsl:otherwise>
-		          	<xsl:value-of select="presets:link/@href"/>  <!-- default link -->
-		          </xsl:otherwise>
-		        </xsl:choose>       	      
-       	   </xsl:attribute>       	  
-           <xsl:value-of select="@name"/>
-         </a>
-       </p>
+       <div class="line item">
+	       <div class="icon">
+	          <xsl:call-template name="icon"/>
+	       </div>    
+	       <div class="content" >
+	       	  <a>  <!--  wikipedia link -->     	   
+	       	   <!--  first try language translation, then default  --> 
+			   <xsl:variable name="wiki_href" select="concat($lang,'.href')" />	       	   
+	       	   <xsl:attribute name="href">
+			        <xsl:choose>
+			          <xsl:when test="presets:link/@*[local-name()=$wiki_href]">
+						<xsl:value-of select="presets:link/@*[local-name()=$wiki_href]"/>
+			          </xsl:when>
+			          <xsl:otherwise>
+			          	<xsl:value-of select="presets:link/@href"/>  <!-- default link -->
+			          </xsl:otherwise>
+			        </xsl:choose>       	      
+	       	   </xsl:attribute>       	  
+	           <xsl:value-of select="@name"/>
+	         </a>
+	       </div>
+       </div>
      </xsl:for-each>
 </xsl:template>
 
+<xsl:template name="icon">
+	 <img>
+	   <xsl:attribute name="src">images/<xsl:value-of select="@icon"/></xsl:attribute>
+	 </img>
+</xsl:template>
 
+<xsl:template name="name">
+     <xsl:value-of select="@name"/>
+</xsl:template>
 
 </xsl:stylesheet>

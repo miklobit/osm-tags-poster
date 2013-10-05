@@ -27,7 +27,7 @@ echo '<html>
 	 form { font-size: 12px; }
 	</style>
 	<body id="top">
-	<h2>OSM tagging schema (build '.$build.')</h2><br/>
+	<h2>OSM tagging schema (test build '.$build.')</h2><br/>
 	<form name="input" action="" method="post" enctype="multipart/form-data">
 	
 	  <input type="radio" name="output" value="html" checked="checked" /> 
