@@ -10,16 +10,14 @@
 
 <xsl:variable name="v1">default language ISO</xsl:variable>
 
-
-
-<xsl:param name="build" select="0013"/>
+<xsl:param name="build" select="0014"/>
 <xsl:param name="col_width" select="400"/>
 
 <xsl:template match="/">
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<title>OSM Tagging schema</title>       
+	<title>OSM Tagging schema (build <xsl:value-of select="$build"/>)</title>       
 	<style type="text/css">
 	 body { font-family: verdana,tahoma ; font-size: 10px ; }
 	 h2 { font-size: 12px; }
@@ -38,7 +36,7 @@
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema (build 0013)</h2><br/><br/>
+	<h2>OSM tagging schema (build <xsl:value-of select="$build"/>)</h2><br/><br/>
 	<div id="list">
 	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
 	   <xsl:for-each select="presets:presets/presets:group">
