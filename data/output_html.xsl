@@ -8,15 +8,11 @@
     doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
     doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
-<xsl:variable name="dnf">Didn't find it</xsl:variable>
-<xsl:variable name="found">Found it</xsl:variable>
-<xsl:variable name="system">SYSTEM</xsl:variable>
+<xsl:variable name="v1">default language ISO</xsl:variable>
 
-<xsl:param name="show_dat" select="1"/>
-<xsl:param name="include_nam" select="1"/>
-<xsl:param name="include_dnf" select="1"/>
-<xsl:param name="show_icon" select="1"/>
-<xsl:param name="include_txt" select="1"/>
+
+
+<xsl:param name="build" select="0013"/>
 <xsl:param name="col_width" select="400"/>
 
 <xsl:template match="/">
