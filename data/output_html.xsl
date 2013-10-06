@@ -13,6 +13,15 @@
 
 <xsl:variable name="lang_href" select="concat($lang,'.href')" />	
 <xsl:variable name="lang_name" select="concat($lang,'.name')" /> 
+<xsl:variable name="sort_name"  > 
+	<xsl:choose>
+		<xsl:when test="$lang = 'en'" >name</xsl:when> 
+		<xsl:otherwise>
+	       <xsl:value-of select="concat($lang,'.name')"/>		   
+		</xsl:otherwise>
+	</xsl:choose>   
+</xsl:variable> 
+
 
 <xsl:param name="build" select="0019"/>
 <xsl:param name="col_width" select="400"/>
@@ -63,7 +72,7 @@
      .group1 { font-weight: bold; background-color: #FFFFE0 ;}  	
 	 .item  {  font-weight: normal; background-color: #E0FFE0 ;}  
 	 .item a {text-decoration:none;}
-	 .local_wiki { color: #FF0000; }
+	 .local_wiki { color: #A00000; }
 
 	</style>
 	</head>
@@ -104,7 +113,8 @@
 	     </div>
      </div>
      <xsl:for-each select="presets:item">
-       <xsl:sort select="@name"/>
+       <xsl:sort select="@*[local-name()=$sort_name]"/>           
+       <!-- <xsl:sort select="@name"/> -->
        <xsl:call-template name="item"/>
      </xsl:for-each>
 </xsl:template>
@@ -156,5 +166,6 @@
 		</xsl:otherwise>
 	</xsl:choose>        
 </xsl:template>
+
 
 </xsl:stylesheet>
