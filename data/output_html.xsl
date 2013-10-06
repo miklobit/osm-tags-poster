@@ -70,7 +70,7 @@
      </xsl:for-each>    
 	<div id="list">
 	     <xsl:for-each select="//presets:item">
-	       <xsl:sort select="@*[local-name()=$sort_name]"/>           
+	       <xsl:sort select="@*[local-name()=$sort_name]" lang="pl" />           
 	       <xsl:call-template name="item"/>
 	     </xsl:for-each>	
 	</div>      
@@ -86,7 +86,7 @@
 	     </div>
      </div>
      <xsl:for-each select="presets:item">
-       <xsl:sort select="@*[local-name()=$sort_name]"/>           
+       <xsl:sort select="@*[local-name()=$sort_name]" lang="pl"/>           
        <xsl:call-template name="item"/>
      </xsl:for-each>
 </xsl:template>
