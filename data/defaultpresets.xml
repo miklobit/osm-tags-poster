@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
-    name="OSM tagging schema"
-    pl.name="OSM schemat tagowania"
+    name="OpenStreetMap tag index"
+    pl.name="OpenStreetMap: indeks tagów"
     >
 <!--
     Pics have been derived from
@@ -806,13 +806,15 @@ Note that for a match, at least one positive and no negative is required.
     </group> <!-- Streets -->
     <group name="Ways" icon="presets/way_unclassified.png"
           pl.name="Drogi nieklasyfikowane, chodniki, ścieżki" >
-        <item name="Track" icon="presets/track1.png" type="way,closedway">
+        <item name="Track" icon="presets/track1.png" type="way,closedway"
+             pl.name="Droga gruntowa">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=track"
                   da.href="http://wiki.openstreetmap.org/wiki/Da:Tag:highway=track"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=track"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Tag:highway=track"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=track"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:highway=track"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=track"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:highway=track"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=track"
                   sv.href="http://wiki.openstreetmap.org/wiki/Sv:Tag:highway=track"
@@ -840,12 +842,14 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
-        <item name="Path" icon="presets/path.png" type="way,closedway">
+        <item name="Path" icon="presets/path.png" type="way,closedway"
+             pl.name="Ścieżka">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=path"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=path"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=path"
                   it.href="http://wiki.openstreetmap.org/wiki/IT:Tag:highway=path"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:highway=path"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=path"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:highway=path"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=path"
                   sv.href="http://wiki.openstreetmap.org/wiki/Sv:Tag:highway=path" />
@@ -883,7 +887,8 @@ Note that for a match, at least one positive and no negative is required.
             </optional>
         </item>
         <separator/>
-        <item name="Dedicated Bridleway" icon="presets/equestrian.png" type="way">
+        <item name="Dedicated Bridleway" icon="presets/equestrian.png" type="way"
+            pl.name="Ścieżka konna">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=bridleway"
                   da.href="http://wiki.openstreetmap.org/wiki/Da:Tag:highway=bridleway"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=bridleway"
@@ -907,13 +912,15 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
-        <item name="Cycle Lane/Track" type="way">
+        <item name="Cycle Lane/Track" icon="presets/cycleway.png" type="way"
+            pl.name="Ścieżka rowerowa na jezdni/poboczu">
             <link href="http://wiki.openstreetmap.org/wiki/Bicycle"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Bicycle"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Bicycle"
                   hr.href="http://wiki.openstreetmap.org/wiki/Hr:Bicycle"
                   it.href="http://wiki.openstreetmap.org/wiki/IT:Bicycle"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Bicycle"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Bicycle"
                   nl.href="http://wiki.openstreetmap.org/wiki/NL:Bicycle"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Bicycle" />
             <label text="Edit Cycle Lane or Track" />
@@ -928,12 +935,14 @@ Note that for a match, at least one positive and no negative is required.
                 <check key="oneway" text="Oneway" default="off" />
             </optional>
         </item>
-        <item name="Dedicated Cycleway" icon="presets/cycleway.png" type="way">
+        <item name="Dedicated Cycleway" icon="presets/cycleway.png" type="way"
+            pl.name="Droga/ścieżka dla rowerów">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=cycleway"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=cycleway"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=cycleway"
                   it.href="http://wiki.openstreetmap.org/wiki/IT:Tag:highway=cycleway"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:highway=cycleway"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=cycleway"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:highway=cycleway"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=cycleway" />
             <label text="Edit Cycleway" />
@@ -953,10 +962,12 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
-        <item name="Segregated Foot- and Cycleway" icon="presets/foot_and_cycleway_segregated.png" type="way">
+        <item name="Segregated Foot- and Cycleway" icon="presets/foot_and_cycleway_segregated.png" type="way"
+            pl.name="Trasa rowerowa + ścieżka dla pieszych (wydzielona)">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=cycleway"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=cycleway"
-                  it.href="http://wiki.openstreetmap.org/wiki/IT:Tag:highway=cycleway" />
+                  it.href="http://wiki.openstreetmap.org/wiki/IT:Tag:highway=cycleway" 
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=cycleway" />
             <label text="Edit Cycleway" />
             <key key="highway" value="path" />
             <key key="bicycle" value="designated" />
@@ -976,10 +987,12 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
-        <item name="Combined Foot- and Cycleway" icon="presets/foot_and_cycleway_combined.png" type="way">
+        <item name="Combined Foot- and Cycleway" icon="presets/foot_and_cycleway_combined.png" type="way"
+            pl.name="Trasa rowerowa + ścieżka dla pieszych (wspólna)" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=cycleway"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=cycleway"
-                  it.href="http://wiki.openstreetmap.org/wiki/IT:Tag:highway=cycleway" />
+                  it.href="http://wiki.openstreetmap.org/wiki/IT:Tag:highway=cycleway" 
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=cycleway" />
             <label text="Edit Cycleway" />
             <key key="highway" value="path" />
             <key key="bicycle" value="designated" />
@@ -1000,12 +1013,14 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
-        <item name="Dedicated Footway" icon="presets/footway.png" type="way">
+        <item name="Dedicated Footway" icon="presets/footway.png" type="way"
+            pl.name="Droga dla pieszych">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=footway"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=footway"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Tag:highway=footway"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=footway"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:highway=footway"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=footway"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:highway=footway"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=footway" />
             <label text="Edit Footway" />
@@ -1024,7 +1039,8 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
-        <item name="Steps" icon="presets/steps.png" type="way">
+        <item name="Steps" icon="presets/steps.png" type="way"
+             pl.name="Schody">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=steps"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=steps"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Tag:highway=steps"
@@ -1049,8 +1065,10 @@ Note that for a match, at least one positive and no negative is required.
             </optional>
         </item>
     </group> <!-- Ways -->
-    <group name="Waypoints" icon="presets/waypoints.png">
-        <item name="Motorway Junction" icon="presets/motorway_exit.png" type="node">
+    <group name="Waypoints" icon="presets/waypoints.png"
+        pl.name="Punkty zw. z drogą">
+        <item name="Motorway Junction" icon="presets/motorway_exit.png" type="node"
+            pl.name="Rozjazd/zjazd na autostradzie/drodze szybkiego ruchu">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=motorway_junction"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=motorway_junction"
                   es.href="http://wiki.openstreetmap.org/wiki/ES:Tag:highway=motorway_junction"
@@ -1063,7 +1081,8 @@ Note that for a match, at least one positive and no negative is required.
             <text key="ref" text="Number" />
             <text key="exit_to" text="Exit to" />
         </item>
-        <item name="Services" icon="styles/standard/vehicle/services.png" type="node,closedway,relation">
+        <item name="Services" icon="presets/vehicle/services.png" type="node,closedway,relation"
+            pl.name="Miejsce obsługi podróżnych (MOP)">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=services"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=services"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=services"
@@ -1078,7 +1097,8 @@ Note that for a match, at least one positive and no negative is required.
                 <check key="toilets" text="Toilets" default="off" />
             </optional>
         </item>
-        <item name="Rest Area" icon="presets/parking.png" type="node,closedway">
+        <item name="Rest Area" icon="presets/parking.png" type="node,closedway"
+            pl.name = "Parking przydrożny, miejsce odpoczynku" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=rest_area"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=rest_area"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=rest_area"
@@ -1096,7 +1116,8 @@ Note that for a match, at least one positive and no negative is required.
             </optional>
         </item>
         <separator/>
-        <item name="Traffic Signal" icon="presets/traffic-light.png" type="node">
+        <item name="Traffic Signal" icon="presets/traffic-light.png" type="node"
+             pl.name="Sygnalizacja świetlna">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=traffic_signals"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=traffic_signals"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:highway=traffic_signals"
@@ -1112,13 +1133,18 @@ Note that for a match, at least one positive and no negative is required.
                  <check key="horse" text="Cross on horseback" default="off" />
             </optional>
         </item>
-        <item name="Stop" icon="presets/Stop.png" type="node">
+        <item name="Stop" icon="presets/Stop.png" type="node"
+             pl.name="Znak stop">
+             <link href="#"/>
             <key key="highway" value="stop" />
         </item>
-        <item name="Give way" icon="styles/standard/vehicle/restriction/right_of_way.png" type="node">
+        <item name="Give way" icon="presets/vehicle/restriction/right_of_way.png" type="node"
+            pl.name="Znak ustąp pierwszeństwa">
+            <link href="#"/>
             <key key="highway" value="give_way" />
         </item>
-        <item name="Mini-roundabout" icon="presets/roundabout_left.png" type="node">
+        <item name="Mini-roundabout" icon="presets/roundabout_left.png" type="node"
+            pl.name="Rondo kompaktowe">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=mini_roundabout"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=mini_roundabout"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=mini_roundabout"
@@ -1130,7 +1156,8 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <combo key="direction" text="Direction" values="clockwise" />
         </item>
-        <item name="Pedestrian Crossing" icon="styles/standard/vehicle/zebra_crossing.png" type="node">            
+        <item name="Pedestrian Crossing" icon="presets/vehicle/zebra_crossing.png" type="node"
+            pl.name="Przejście dla pieszych">            
             <link href="http://wiki.openstreetmap.org/wiki/Key:crossing"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Key:crossing"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Key:crossing"
@@ -1147,7 +1174,8 @@ Note that for a match, at least one positive and no negative is required.
             <check key="bicycle" text="Cross by bicycle" default="off" />
             <check key="horse" text="Cross on horseback" default="off" />
         </item>
-        <item name="Traffic Calming" icon="presets/chicane.png" type="node,way">
+        <item name="Traffic Calming" icon="presets/chicane.png" type="node,way"
+            pl.name="Elementy zwalniające ruch">
             <link href="http://wiki.openstreetmap.org/wiki/Key:traffic_calming"
                   es.href="http://wiki.openstreetmap.org/wiki/ES:Key:traffic_calming"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Key:traffic_calming"
@@ -1160,13 +1188,15 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <combo key="traffic_calming" text="Type" values="yes,bump,chicane,choker,cushion,hump,island,rumble_strip,table" match="key" />
         </item>
-        <item name="Passing Place" icon="presets/passingplace.png" type="node">
+        <item name="Passing Place" icon="presets/passingplace.png" type="node"
+            pl.name="Miejsce do wymijania">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=passing_place"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:highway=passing_place"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=passing_place"/>
             <key key="highway" value="passing_place" />
         </item>
-        <item name="Turning Circle" icon="presets/turning_circle.png" type="node">
+        <item name="Turning Circle" icon="presets/turning_circle.png" type="node"
+            pl.name="Miejsce zawracania">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=turning_circle"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=turning_circle"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=turning_circle"
@@ -1184,7 +1214,8 @@ Note that for a match, at least one positive and no negative is required.
             <text key="name" text="Name" />
             <text key="alt_name" text="Second Name" />
         </item>
-        <item name="Speed Camera" icon="presets/speed_camera.png" type="node">
+        <item name="Speed Camera" icon="presets/speed_camera.png" type="node"
+            pl.name="Fotoradar">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=speed_camera"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=speed_camera"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Tag:highway=speed_camera"
@@ -1193,7 +1224,8 @@ Note that for a match, at least one positive and no negative is required.
             <key key="highway" value="speed_camera" />
         </item>
         <separator/>
-        <item name="Grit Bin" icon="styles/standard/misc/grit_bin.png" type="node">
+        <item name="Grit Bin" icon="presets/misc/grit_bin.png" type="node"
+            pl.name="Pojemnik na sól drogową">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=grit_bin"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:amenity=grit_bin"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:amenity=grit_bin"
@@ -1201,7 +1233,8 @@ Note that for a match, at least one positive and no negative is required.
             <key key="amenity" value="grit_bin" />
         </item>
         <separator/>
-        <item name="Mountain Pass" icon="presets/mountain_pass.png" type="node">
+        <item name="Mountain Pass" icon="presets/mountain_pass.png" type="node"
+            pl.name="Przejazd przez przełęcz">
             <link href="http://wiki.openstreetmap.org/wiki/Key:mountain_pass"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Key:mountain_pass"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Key:mountain_pass"
@@ -1218,7 +1251,7 @@ Note that for a match, at least one positive and no negative is required.
         </item>
     </group> <!-- Waypoints -->
     <group name="Barriers" icon="presets/barrier.png"
-           pl.name="Zapory" >
+           pl.name="Zapory,bariery" >
         <item name="Block" icon="presets/block.png" type="node,way,closedway"
              pl.name="Bloki (beton,kamień)" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=block"
@@ -1261,7 +1294,8 @@ Note that for a match, at least one positive and no negative is required.
                 <combo key="material" text="Material" values="concrete,metal,plastic,stone,wood" />
             </optional>
         </item> <!-- bollard -->
-        <item name="Cycle Barrier" icon="styles/standard/vehicle/cycle_barrier.png" type="node">
+        <item name="Cycle Barrier" icon="presets/vehicle/cycle_barrier.png" type="node"
+            pl.name="Bariera rowerowa">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=cycle_barrier"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:barrier=cycle_barrier"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:barrier=cycle_barrier"

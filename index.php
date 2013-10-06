@@ -2,22 +2,26 @@
 
 $build = '00015';
 
-$display_form = 0;
-if( isset($_POST['output'] ) )
+$output = "";
+if( isset($_GET['output'] ) )
 {
- if( $_POST['output'] == "html" ) {	
+ $output =	$_GET['output'];
+ if( $output == "html" ) {	
 
-	$xsl_path = './data/output_html.xsl';
-	
+	$xsl_path = './data/output_html.xsl';	
 	// generate xsl transformation	
-	genOutput($xsl_path);
-	
+	genOutput($xsl_path);	
  } 
-   else {  $display_form = 1; }
-} else { $display_form = 1; }
+ else if ( $output == "svg" ) {
+	echo '<html>
+	       <body>Under contruction...</body>
+	      </html>' ;   	
+ }
+
+} 
 
 
-if( $display_form  != 0 ) {
+if( $output  == "" ) {
 // display form
 echo '<html>
 	<head>
@@ -28,16 +32,16 @@ echo '<html>
 	</style>
 	<body id="top">
 	<h2>OSM tagging schema</h2><br/>
-	<form name="input" action="" method="post" enctype="multipart/form-data">
+	<form name="input" action="" method="get" enctype="multipart/form-data">
 	
 	  <input type="radio" name="output" value="html" checked="checked" /> 
 	   HTML output  <br />	   
 	  <input type="radio" name="output" value="svg" />  
-	   SVG poster <br />
+	   SVG output (poster) <br />
 
 	  <hr width="30%" align="left" /> <br />   
       
-	  <!-- <input type="checkbox" name="include_txt" value="1" checked="checked" />Pokaż tekst wpisu<br /> -->
+	  <input type="checkbox" name="group" value="1" checked="checked" />Group tags<br />
 	  Column width&nbsp;<input type="text" name="col_width" value="600" />px<br />
 	  <!-- language translation -->
 	  Language&nbsp;<select name="lang">
@@ -75,13 +79,15 @@ function genOutput($xsl_path)
 	// set parameters
 
 //	$proc->setParameter( '', 'include_txt',  $include_txt);	
-	if( isset($_POST['col_width']) ) {
-		$proc->setParameter( '', 'col_width',  $_POST['col_width'] );
+	if( isset($_GET['col_width']) ) {
+		$proc->setParameter( '', 'col_width',  $_GET['col_width'] );
 	}
-	if( isset($_POST['lang']) ) {
-		$proc->setParameter( '', 'lang',  $_POST['lang'] );
+	if( isset($_GET['lang']) ) {
+		$proc->setParameter( '', 'lang',  $_GET['lang'] );
 	}				
-		
+	if( isset($_GET['group']) ) {
+		$proc->setParameter( '', 'group',  $_GET['group'] );
+	}			
 	$proc->importStyleSheet($xsl); // attach the xsl rules
 	echo $proc->transformToXML($xml);
 }

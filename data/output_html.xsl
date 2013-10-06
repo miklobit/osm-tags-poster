@@ -26,67 +26,28 @@
 <xsl:param name="build" select="0019"/>
 <xsl:param name="col_width" select="400"/>
 <xsl:param name="lang" select="pl"/>
+<xsl:param name="group" select="0"/>
 
 <xsl:template match="/">
 	<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<title>OSM Tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</title>       
-	<style type="text/css">
-	 body { font-family: verdana,tahoma ; font-size: 12px ; }
-	 h2 { font-size: 14px; }
-	 #list {
-		position: relative;
-		float: left ;
-		width: <xsl:value-of select="$col_width"/>px;
-		border: 1px solid #405F72;
-		padding: 5px 5px 5px 5px ;	
-		display: table; 
-	 }
- 
-	 .line {
-		position: relative;
-		float: left ;
-		width: 100%;	
-		display: table-cell; 
-		vertical-align: middle;		 
-	  }			
-	 .icon { 
-	    padding-left: 10px;
-		float: left ;
-		clear: both ;
-		width: 10%;
-		display: table-cell; 
-		vertical-align: middle;				 
-	  }	
-	 .content {
-	    padding-left: 10px;
-	    padding-top: 7px;
-	    padding-bottom: 7px;
-		float: left ;
-		width: 85%;
-		display: table-cell; 
-		vertical-align: middle;			
-	  }
-	 .group0 { font-weight: bold; background-color: #FFE0E0 ;} 	
-     .group1 { font-weight: bold; background-color: #FFFFE0 ;}  	
-	 .item  {  font-weight: normal; background-color: #E0FFE0 ;}  
-	 .item a {text-decoration:none;}
-	 .local_wiki { color: #A00000; }
-
-	</style>
-	</head>
+	   <xsl:call-template name="doc_header"/>
 	<body>
-       <xsl:apply-templates/> 
+        <xsl:choose>
+          <xsl:when test="$group = '1'">
+               <!-- tag groups with group headers -->
+			   <xsl:apply-templates/> 
+          </xsl:when>
+          <xsl:otherwise>
+             <!-- tags alone with sorting -->
+	   		<xsl:call-template name="items_alone"/>
+          </xsl:otherwise>
+        </xsl:choose>  	
 	</body>
 	</html>
 </xsl:template>
 
 <xsl:template match="presets:presets">
-	<h2>
-	  <xsl:call-template name="name"/><!-- (test build <xsl:value-of select="$build"/>) -->
-	</h2>
-	<br/><br/>
+    <xsl:call-template name="list_header"/>
 	<div id="list">
 	   <xsl:for-each select="presets:group">
 	      <div class="line group0">
@@ -102,6 +63,18 @@
 	</div>
 </xsl:template>
 
+<xsl:template name="items_alone">
+  <!-- item lisy without group headers -->
+     <xsl:for-each select="/presets:presets">          
+       <xsl:call-template name="list_header"/>
+     </xsl:for-each>    
+	<div id="list">
+	     <xsl:for-each select="//presets:item">
+	       <xsl:sort select="@*[local-name()=$sort_name]"/>           
+	       <xsl:call-template name="item"/>
+	     </xsl:for-each>	
+	</div>      
+</xsl:template>
 
 <xsl:template match="presets:group">
      <div class="line group1">
@@ -114,7 +87,6 @@
      </div>
      <xsl:for-each select="presets:item">
        <xsl:sort select="@*[local-name()=$sort_name]"/>           
-       <!-- <xsl:sort select="@name"/> -->
        <xsl:call-template name="item"/>
      </xsl:for-each>
 </xsl:template>
@@ -167,5 +139,61 @@
 	</xsl:choose>        
 </xsl:template>
 
+<xsl:template name="doc_header">
+	<head>
+	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>OSM Tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</title>       
+	<style type="text/css">
+	 body { font-family: verdana,tahoma ; font-size: 12px ; }
+	 h2 { font-size: 14px; }
+	 #list {
+		position: relative;
+		float: left ;
+		width: <xsl:value-of select="$col_width"/>px;
+		border: 1px solid #405F72;
+		padding: 5px 5px 5px 5px ;	
+		display: table; 
+	 }
+ 
+	 .line {
+		position: relative;
+		float: left ;
+		width: 100%;	
+		display: table-cell; 
+		vertical-align: middle;		 
+	  }			
+	 .icon { 
+	    padding-left: 10px;
+		float: left ;
+		clear: both ;
+		width: 10%;
+		display: table-cell; 
+		vertical-align: middle;				 
+	  }	
+	 .content {
+	    padding-left: 10px;
+	    padding-top: 7px;
+	    padding-bottom: 7px;
+		float: left ;
+		width: 85%;
+		display: table-cell; 
+		vertical-align: middle;			
+	  }
+	 .group0 { font-weight: bold; background-color: #FFE0E0 ;} 	
+     .group1 { font-weight: bold; background-color: #FFFFE0 ;}  	
+	 .item  {  font-weight: normal; background-color: #E0FFE0 ;}  
+	 .item a {text-decoration:none;}
+	 .local_wiki { color: #A00000; }
+
+	</style>
+	</head>
+</xsl:template>
+
+<xsl:template name="list_header">
+	<h2>
+	  <xsl:call-template name="name"/><!-- (test build <xsl:value-of select="$build"/>) -->
+	</h2>
+	<br/><br/>
+</xsl:template>
 
 </xsl:stylesheet>
