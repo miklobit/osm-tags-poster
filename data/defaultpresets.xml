@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0">
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
+    name="OSM tagging schema"
+    pl.name="OSM schemat tagowania"
+    >
 <!--
     Pics have been derived from
     http://de.wikipedia.org/wiki/Bildtafel_der_Verkehrszeichen_in_Deutschland (german street sign SVGs)
@@ -145,9 +148,12 @@ the tags of an OSM object fit into this preset.
  - keyvalue: positive if key and value matches, negative otherwise
 Note that for a match, at least one positive and no negative is required.
 -->
-  <group name="Highways" icon="presets/way_secondary.png">
-    <group name="Streets" icon="presets/way_secondary.png">
-        <item name="Motorway" icon="presets/motorway.png" type="way">
+  <group name="Highways" icon="presets/way_secondary.png"
+         pl.name="Drogi" >
+    <group name="Streets" icon="presets/way_secondary.png"
+          pl.name="Drogi klasyfikowane, szosy" >
+        <item name="Motorway" icon="presets/motorway.png" type="way"
+              pl.name="Autostrada" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=motorway"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=motorway"
                   es.href="http://wiki.openstreetmap.org/wiki/ES:Tag:highway=motorway"
@@ -178,7 +184,8 @@ Note that for a match, at least one positive and no negative is required.
                 </checkgroup>
             </optional>
         </item>
-        <item name="Motorway Link" icon="presets/motorway.png" type="way">
+        <item name="Motorway Link" icon="presets/motorway.png" type="way"
+              pl.name="Autostrada (łącznik)" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=motorway_link"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=motorway_link"
                   es.href="http://wiki.openstreetmap.org/wiki/ES:Tag:highway=motorway_link"
@@ -311,12 +318,14 @@ Note that for a match, at least one positive and no negative is required.
                 <check key="lit" text="Lit" default="off" /> 
             </optional>
         </item>
-        <item name="Secondary" icon="presets/way_secondary.png" type="way">
+        <item name="Secondary" icon="presets/way_secondary.png" type="way"
+              pl.name="Droga drugorzędna" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=secondary"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:highway=secondary"
                   fi.href="http://wiki.openstreetmap.org/wiki/Fi:Tag:highway=secondary"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:highway=secondary"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:highway=secondary"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:highway=secondary"                  
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:highway=secondary"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=secondary"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:highway=secondary" />
@@ -339,7 +348,8 @@ Note that for a match, at least one positive and no negative is required.
                 <check key="lit" text="Lit" default="off" /> 
             </optional>
         </item>
-        <item name="Secondary Link" icon="presets/way_secondary.png" type="way">
+        <item name="Secondary Link" icon="presets/way_secondary.png" type="way"
+              pl.name="Droga drugorzędna (łącznik)" >
             <link href="http://wiki.openstreetmap.org/wiki/Link_(highway)"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Link_(highway)"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Link_(highway)"
@@ -761,7 +771,8 @@ Note that for a match, at least one positive and no negative is required.
             </optional>
         </item>
     </group> <!-- Streets -->
-    <group name="Ways" icon="presets/way_unclassified.png">
+    <group name="Ways" icon="presets/way_unclassified.png"
+          pl.name="Drogi nieklasyfikowane, chodniki, ścieżki" >
         <item name="Track" icon="presets/track1.png" type="way,closedway">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:highway=track"
                   da.href="http://wiki.openstreetmap.org/wiki/Da:Tag:highway=track"
@@ -1173,8 +1184,10 @@ Note that for a match, at least one positive and no negative is required.
             </optional>
         </item>
     </group> <!-- Waypoints -->
-    <group name="Barriers" icon="presets/barrier.png"> <!-- *** node barriers *** -->
-        <item name="Block" icon="presets/block.png" type="node,way,closedway">
+    <group name="Barriers" icon="presets/barrier.png"
+           pl.name="Zapory" >
+        <item name="Block" icon="presets/block.png" type="node,way,closedway"
+             pl.name="Bloki (beton,kamień)" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=block"
                   pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:barrier=block"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:barrier=block" />
@@ -1191,12 +1204,14 @@ Note that for a match, at least one positive and no negative is required.
                 <combo key="material" text="Material" values="concrete,stone" />
             </optional>
         </item> <!-- block -->
-        <item name="Bollard" icon="presets/bollard.png" type="node,way">
+        <item name="Bollard" icon="presets/bollard.png" type="node,way"
+              pl.name="Słupek, pachołek" >
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=bollard"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:barrier=bollard"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:barrier=bollard"
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:barrier=bollard"
                   nl.href="http://wiki.openstreetmap.org/wiki/NL:Tag:barrier=bollard"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:barrier=bollard"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:barrier=bollard" />
             <label text="Edit Bollard" />
             <space />
@@ -6396,7 +6411,9 @@ Note that for a match, at least one positive and no negative is required.
             <key key="landuse" value="orchard" />
             <text key="name" text="Name" />
         </item>
-        <item name="Vineyard" icon="presets/fruits.png" type="node,closedway,relation">
+        <item name="Vineyard" icon="presets/fruits.png" type="node,closedway,relation"
+              pl.name="Winnica" >
+            <link href="http://wiki.openstreetmap.org/wiki/Tag:landuse=vineyard"/>            
             <label text="Edit Vineyard Landuse" />
             <space />
             <key key="landuse" value="vineyard" />

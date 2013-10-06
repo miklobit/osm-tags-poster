@@ -11,7 +11,8 @@
 <!-- this file is part of osm-tag-poster project: github.com/miklobit/osm-tags-poster  -->
 <!-- created by miklobit 2013.10.01 -->
 
-<xsl:variable name="v1"></xsl:variable>
+<xsl:variable name="lang_href" select="concat($lang,'.href')" />	
+<xsl:variable name="lang_name" select="concat($lang,'.name')" /> 
 
 <xsl:param name="build" select="0019"/>
 <xsl:param name="col_width" select="400"/>
@@ -66,12 +67,18 @@
 	</style>
 	</head>
 	<body>
-	<h2>OSM tagging schema <xsl:value-of select="$lang"/> (test build <xsl:value-of select="$build"/>)</h2><br/><br/>
+       <xsl:apply-templates/> 
+	</body>
+	</html>
+</xsl:template>
+
+<xsl:template match="presets:presets">
+	<h2>
+	  <xsl:call-template name="name"/><!-- (test build <xsl:value-of select="$build"/>) -->
+	</h2>
+	<br/><br/>
 	<div id="list">
-	  <!--
-	   <xsl:attribute name="style">width:<xsl:value-of select="$col_width"/>px;height:100%;</xsl:attribute>
-	  --> 
-	   <xsl:for-each select="presets:presets/presets:group">
+	   <xsl:for-each select="presets:group">
 	      <div class="line group0">
 		     <div class="icon">
 		        <xsl:call-template name="icon"/>
@@ -83,8 +90,6 @@
           <xsl:apply-templates/>  
        </xsl:for-each>
 	</div>
-	</body>
-	</html>
 </xsl:template>
 
 
@@ -98,29 +103,33 @@
 	     </div>
      </div>
      <xsl:for-each select="presets:item">
+       <xsl:sort select="@name"/>
+       <xsl:call-template name="item"/>
+     </xsl:for-each>
+</xsl:template>
+
+<xsl:template name="item">
        <div class="line item">
 	       <div class="icon">
 	          <xsl:call-template name="icon"/>
 	       </div>    
 	       <div class="content" >
 	       	  <a>  <!--  wikipedia link -->     	   
-	       	   <!--  first try language translation, then default  --> 
-			   <xsl:variable name="wiki_href" select="concat($lang,'.href')" />	       	   
+	       	   <!--  first try language translation, then default  -->       	   
 	       	   <xsl:attribute name="href">
 			        <xsl:choose>
-			          <xsl:when test="presets:link/@*[local-name()=$wiki_href]">
-						<xsl:value-of select="presets:link/@*[local-name()=$wiki_href]"/>
+			          <xsl:when test="presets:link/@*[local-name()=$lang_href]">
+						<xsl:value-of select="presets:link/@*[local-name()=$lang_href]"/>
 			          </xsl:when>
 			          <xsl:otherwise>
 			          	<xsl:value-of select="presets:link/@href"/>  <!-- default link -->
 			          </xsl:otherwise>
 			        </xsl:choose>       	      
 	       	   </xsl:attribute>       	  
-	           <xsl:value-of select="@name"/>
+	           <xsl:call-template name="name"/>
 	         </a>
 	       </div>
        </div>
-     </xsl:for-each>
 </xsl:template>
 
 <xsl:template name="icon">
@@ -130,7 +139,14 @@
 </xsl:template>
 
 <xsl:template name="name">
-     <xsl:value-of select="@name"/>
+	<xsl:choose>
+		<xsl:when test="@*[local-name()=$lang_name]">
+			<xsl:value-of select="@*[local-name()=$lang_name]"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="@name"/>  <!-- default name -->
+		</xsl:otherwise>
+	</xsl:choose>        
 </xsl:template>
 
 </xsl:stylesheet>
