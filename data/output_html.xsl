@@ -63,6 +63,7 @@
      .group1 { font-weight: bold; background-color: #FFFFE0 ;}  	
 	 .item  {  font-weight: normal; background-color: #E0FFE0 ;}  
 	 .item a {text-decoration:none;}
+	 .local_wiki { color: #FF0000; }
 
 	</style>
 	</head>
@@ -115,11 +116,12 @@
 	       </div>    
 	       <div class="content" >
 	       	  <a>  <!--  wikipedia link -->     	   
-	       	   <!--  first try language translation, then default  -->       	   
+	       	   <!--  first try language translation, then default  -->    
+	       	      	   
 	       	   <xsl:attribute name="href">
 			        <xsl:choose>
 			          <xsl:when test="presets:link/@*[local-name()=$lang_href]">
-						<xsl:value-of select="presets:link/@*[local-name()=$lang_href]"/>
+						<xsl:value-of select="presets:link/@*[local-name()=$lang_href]"/> 
 			          </xsl:when>
 			          <xsl:otherwise>
 			          	<xsl:value-of select="presets:link/@href"/>  <!-- default link -->
@@ -127,6 +129,12 @@
 			        </xsl:choose>       	      
 	       	   </xsl:attribute>       	  
 	           <xsl:call-template name="name"/>
+			   <!--  info about wiki local translation available -->
+			   <xsl:if test="presets:link/@*[local-name()=$lang_href]">
+			      <b class="local_wiki">
+			      	<xsl:value-of select="concat(' -> Wiki(',$lang,')')" /> 
+			      </b>
+			   </xsl:if>   		   
 	         </a>
 	       </div>
        </div>
