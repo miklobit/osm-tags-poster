@@ -144,7 +144,15 @@
 	  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<title>OSM Tagging schema <xsl:value-of select="$lang"/> (build <xsl:value-of select="$build"/>)</title>       
 	<style type="text/css">
-	 body { font-family: verdana,tahoma ; font-size: 12px ; }
+	@font-face {
+	    font-family: 'UbuntuMedium';
+	    src: url('fonts/ubuntu-web/ubuntu-m.eot');
+	    src: url('fonts/ubuntu-web/ubuntu-m.eot') format('embedded-opentype'),
+	         url('fonts/ubuntu-web/ubuntu-m.woff') format('woff'),
+	         url('fonts/ubuntu-web/ubuntu-m.ttf') format('truetype'),
+	         url('fonts/ubuntu-web/ubuntu-m.svg#UbuntuMedium') format('svg');	
+	 }
+	 body { font-family: 'UbuntuMedium',verdana,tahoma ; font-size: 14px ; }
 	 h2 { font-size: 14px; }
 	 #list {
 		position: relative;
